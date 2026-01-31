@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import AnaimalaiInfo from './components/AnaimalaiInfo';
-import ImpactStats from './components/ImpactStats';
-import SolutionWorkflow from './components/SolutionWorkflow';
-import PolicySection from './components/PolicySection';
-import CommunityImpact from './components/CommunityImpact';
-import DeveloperSection from './components/DeveloperSection';
-import Footer from './components/Footer';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import AnaimalaiInfo from './components/AnaimalaiInfo.tsx';
+import ImpactStats from './components/ImpactStats.tsx';
+import SolutionWorkflow from './components/SolutionWorkflow.tsx';
+import PolicySection from './components/PolicySection.tsx';
+import CommunityImpact from './components/CommunityImpact.tsx';
+import DeveloperSection from './components/DeveloperSection.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (

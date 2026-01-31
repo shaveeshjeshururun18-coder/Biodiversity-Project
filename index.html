@@ -16,6 +16,7 @@
             },
             colors: {
               forest: {
+                950: '#0a2e0c',
                 900: '#1B5E20', // Deep Green
                 800: '#2E7D32',
                 700: '#388E3C',
@@ -62,18 +63,21 @@
         }
       }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "recharts": "https://esm.sh/recharts@^3.5.1"
+    "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+    "react": "https://esm.sh/react@^19.0.0",
+    "react-dom": "https://esm.sh/react-dom@^19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.0.0/client",
+    "recharts": "https://esm.sh/recharts@^2.15.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
-</head>
+    <script type="module" src="./index.tsx"></script>
+  </head>
   <body>
     <div id="root"></div>
   </body>

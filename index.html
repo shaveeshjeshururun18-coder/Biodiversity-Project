@@ -62,6 +62,120 @@
           transform: translateY(0);
         }
       }
+
+      /* Professional Aesthetic PDF/Print Styles */
+      @media print {
+        @page {
+          margin: 1.5cm;
+          size: A4 portrait;
+        }
+        
+        html, body {
+          width: 210mm;
+          height: auto;
+          background: #fff !important;
+          color: #000 !important;
+          font-size: 11pt;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        /* Elements to hide in PDF */
+        header, 
+        .no-print, 
+        button, 
+        nav, 
+        .animate-bounce, 
+        .absolute.bottom-10,
+        [role="button"] {
+          display: none !important;
+        }
+
+        /* Section layout */
+        section {
+          page-break-after: always;
+          break-after: page;
+          padding: 2rem 0 !important;
+          display: block !important;
+          position: relative !important;
+          height: auto !important;
+          min-height: auto !important;
+        }
+
+        /* Hero as Cover Page */
+        #top, .h-screen {
+          height: 100vh !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          background: linear-gradient(to bottom right, #0a2e0c, #1B5E20) !important;
+          color: white !important;
+        }
+        #top * { color: white !important; }
+
+        /* Typography fixes */
+        h1 { font-size: 48pt !important; margin-bottom: 2rem !important; }
+        h2 { font-size: 28pt !important; color: #1B5E20 !important; border-bottom: 2pt solid #1B5E20; padding-bottom: 0.5rem; margin-bottom: 1.5rem !important; }
+        h3 { font-size: 18pt !important; color: #2E7D32 !important; margin-top: 1rem !important; }
+        p { line-height: 1.6; margin-bottom: 1rem; }
+
+        /* Grid handling: force 2 columns for data, 1 column for text-heavy */
+        .grid {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          gap: 1.5rem !important;
+        }
+        
+        #impact .grid, #solution .grid, #community .grid {
+          grid-template-columns: 1fr 1fr !important;
+        }
+
+        .container {
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        /* Chart adjustments - Critical for clarity */
+        .recharts-responsive-container {
+          width: 100% !important;
+          height: 350px !important;
+          min-width: 300px !important;
+        }
+        
+        .recharts-surface {
+          width: 100% !important;
+        }
+
+        /* Developer Section - Special handling for aesthetic dark theme */
+        #developer {
+          background: #0a2e0c !important;
+          color: #fff !important;
+          padding: 3rem !important;
+          border-radius: 20pt;
+        }
+        #developer * { color: #fff !important; }
+        #developer .grid { grid-template-columns: 1fr 1fr 1fr !important; }
+        
+        /* Force background colors for aesthetic blocks */
+        .bg-forest-50, .bg-orange-50, .bg-blue-50, .bg-green-50, .bg-alert-100 {
+          background-color: transparent !important;
+          border: 1pt solid #eee !important;
+          padding: 1rem !important;
+        }
+        
+        .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+          box-shadow: none !important;
+          border: 0.5pt solid #ddd !important;
+        }
+
+        /* Prevent breaking inside blocks */
+        .bg-white, .p-8, .p-6, .rounded-2xl {
+          page-break-inside: avoid;
+          break-inside: avoid;
+        }
+      }
     </style>
     <script type="importmap">
 {

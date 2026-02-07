@@ -1,9 +1,13 @@
 import React from 'react';
-import { User } from 'lucide-react';
+import { User, FileText } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToDev = () => {
     document.getElementById('developer')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
@@ -19,10 +23,12 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold mb-4 uppercase text-sm tracking-wider text-green-400">தகவல்கள்</h4>
             <ul className="space-y-2 text-forest-50/80 text-sm">
+              <li><button onClick={handlePrint} className="hover:text-white transition-colors flex items-center gap-2">
+                <FileText size={14} /> முழு அறிக்கை (PDF)
+              </button></li>
               <li><a href="#" className="hover:text-white transition-colors">TN PIPER கொள்கை</a></li>
               <li><a href="#" className="hover:text-white transition-colors">உயர் நீதிமன்ற உத்தரவுகள்</a></li>
               <li><a href="#" className="hover:text-white transition-colors">ஆராய்ச்சி கட்டுரைகள்</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">மீட்பு வரைபடங்கள்</a></li>
             </ul>
           </div>
           <div>
@@ -34,7 +40,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Big Attractive Creator Button */}
-        <div className="mb-12">
+        <div className="mb-12 no-print">
           <button 
             onClick={scrollToDev}
             className="w-full group relative overflow-hidden bg-gradient-to-r from-forest-800 to-forest-700 p-8 rounded-3xl border border-white/10 hover:border-green-500/50 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-center justify-between gap-6"

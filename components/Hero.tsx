@@ -1,11 +1,15 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, FileDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const handleDownloadPDF = () => {
+    window.print();
+  };
+
   return (
-    <div className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-forest-900 via-forest-800 to-black">
+    <div id="top" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-forest-900 via-forest-800 to-black">
       {/* Decorative Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10" 
+      <div className="absolute inset-0 opacity-10 no-print" 
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
@@ -24,17 +28,24 @@ const Hero: React.FC = () => {
           இன்று <span className="text-orange-300 font-bold">லான்டானா ஆக்கிரமிப்பிலிருந்து</span> இக்காடுகளை மீட்டெடுக்கும் பெரும் பணியில் நாம் உள்ளோம்.
         </p>
         
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center no-print">
           <button onClick={() => document.getElementById('history')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-white text-forest-900 hover:bg-gray-100 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center gap-2 text-lg">
             வரலாற்றை அறிக (History)
           </button>
           <button onClick={() => document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-transparent border border-white/30 hover:bg-white/10 text-white rounded-full font-bold transition-all duration-300 backdrop-blur-sm text-lg">
             மீட்புப் பணிகள் (Restoration)
           </button>
+          <button 
+            onClick={handleDownloadPDF} 
+            className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-full font-bold transition-all duration-300 shadow-xl flex items-center gap-2 text-lg border-b-4 border-orange-800 active:border-b-0 active:translate-y-1"
+          >
+            <FileDown size={20} />
+            PDF பதிவிறக்கம்
+          </button>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50 no-print">
         <ArrowDown size={32} />
       </div>
     </div>
